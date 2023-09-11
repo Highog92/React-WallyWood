@@ -12,7 +12,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<MainLayout title="HOME" />}>
+          <Route path="/" element={<MainLayout title="Home" />}>
+            <Route path="/" element={<Home title="Home" />} />
             <Route path="/Posters" index element={<Posters title="Posters" />} />
             <Route path="/About" element={<About title="About" />} />
             <Route path="/Contact" element={<Contact title="Contact" />} />
@@ -20,7 +21,6 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      <Home />
 
     </>
   )
