@@ -6,7 +6,7 @@ export const Navigation = () => {
 
     return (
         <nav className={style.navStyle}>
-            <div>WOLLYWOOD</div>
+            <div>WALLYWOOD</div>
             <div>
                 <Link to="/">HOME</Link>
                 <Link to="/posters">PLAKATER</Link>
