@@ -1,30 +1,24 @@
+import { useEffect, useState } from "react"
+import { MovieCard } from "../Components/Card/MovieCard"
+
 export function Home() {
+  // const [userData, setUserData] = useState([])
+  // useEffect(() => {
+
+  //   const fetchUsers = () => {
+
+  //     const url = 'http://localhost:4000/poster/list'
+  //     fetch(url).then(result => result.json()).then(data => setUserData(data))
+  //   }
+  //   fetchUsers()
+  // }, [])
+
+  // console.log("data", userData);
 
   return (
     <section>
       <h2>Sidste nyt...</h2>
-      <div>
-        <img src="" alt="" />
-      </div>
-
-      <article>
-        <h3>Film overskrift</h3>
-        <p>Om filmen</p>
-        <p>Genre:</p>
-        <button>Læs mere</button>
-      </article>
-
-      <div>
-        <img src="" alt="" />
-      </div>
-
-      <article>
-        <h3>Film overskrift</h3>
-        <p>Om filmen</p>
-        <p>Genre:</p>
-        <button>Læs mere</button>
-      </article>
-
+      <MovieCard />
     </section>
   )
 }

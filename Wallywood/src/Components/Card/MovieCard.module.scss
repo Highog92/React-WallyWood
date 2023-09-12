@@ -1,0 +1,26 @@
+.movieCard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    height: 500px;
+    max-width: 500px;
+
+    hgroup{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        flex-direction: row;
+    }
+
+    div {
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+
+    }
+}
