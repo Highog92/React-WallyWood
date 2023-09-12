@@ -1,11 +1,28 @@
 .footerStyle {
-    width: 100%;
-    background-color: rgb(200,200,200);
-    // height: 10vh;
-    color: black;
-    position: fixed;
-    bottom: 0;
     display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    width: 100%;
+    background-color: #F9F9F9;
+    color: #524641;
+    bottom: 0;
     align-items: center;
-    justify-content: center;
+
+    h2 {
+        color: #D97852;
+    }
+
+    aside {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    svg{
+        width: 40px;
+        color: #CCCCCC;
+        margin: 10px;
+    }
+
+    svg:hover{
+        color: #5C1F06;
+    }
 }

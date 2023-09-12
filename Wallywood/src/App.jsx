@@ -1,5 +1,6 @@
 import './App.css'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { UserContextProvider } from './Components/useContext/useContext';
 import { Posters } from './Pages/Posters';
 import { About } from './Pages/About';
 import { Contact } from './Pages/Contact';
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <>
+    <UserContextProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout title="Home" />}>
@@ -21,6 +23,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+    </UserContextProvider>
 
     </>
   )

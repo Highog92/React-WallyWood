@@ -7,7 +7,7 @@ export function Contact() {
         <label htmlFor="">Dit navn</label>
         <input type="name" />
 
-        <label htmlFor="Din email"></label>
+        <label htmlFor="email">Email</label>
         <input type="email" />
 
         <textarea name="comment" id="" cols="30" rows="10"></textarea>
