@@ -1,17 +1,11 @@
 .movieCard {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    height: 500px;
-    max-width: 500px;
+    display: flex;
+    flex-direction: row;
 
-    hgroup{
+    hgroup {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        flex-direction: row;
-    }
-
-    div {
-        margin: 0;
+        justify-content: center;
     }
 
     img {
@@ -21,6 +15,12 @@
     article {
         display: flex;
         flex-direction: column;
+    }
 
+    button {
+        display: flex;
+        width: 200px;
+        justify-content: center;
+        align-items: center;
     }
 }

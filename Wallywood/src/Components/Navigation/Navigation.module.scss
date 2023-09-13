@@ -1,4 +1,22 @@
-.navStyle{
+.navStyle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    // margin: 50px;
+    border-bottom: #D97852 solid 2px;
 
-    
+    div {
+        padding: 50px;
+    }
+
+    a {
+        padding: 10px;
+        align-items: ;
+    }
+}
+
+.logo {
+    color: #D97852;
+    // width: 5rem;
+    margin-left: 30px;
 }
