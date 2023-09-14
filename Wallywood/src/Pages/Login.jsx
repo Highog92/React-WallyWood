@@ -1,12 +1,16 @@
+import style from '../Layout/MainLayout.module.scss'
+
+
+
 export function Login() {
 
 
 
 
 
-  
-    return (
-        <section>
+
+  return (
+    <section className={style.contactStyle} >
       <h2>Login</h2>
       <form action="">
         <label htmlFor="">Brugernavn</label>
@@ -17,6 +21,6 @@ export function Login() {
 
         <button>Login</button>
       </form>
-      </section>
-    )
+    </section>
+  )
 }

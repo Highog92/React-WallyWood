@@ -11,12 +11,20 @@
 
     a {
         padding: 10px;
-        align-items: ;
+        color:#524641;
+        font-size: 18px;
+        font-family: Titillium Web;
+    }
+
+    a:hover{
+        color: #D97852
     }
 }
 
 .logo {
     color: #D97852;
-    // width: 5rem;
+    font-size: 54px;
     margin-left: 30px;
+    font-family: Titillium Web;
+    font-weight: 900;
 }

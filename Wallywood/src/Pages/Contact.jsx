@@ -1,7 +1,10 @@
+import style from '../Layout/MainLayout.module.scss'
+
+
 export function Contact() {
 
   return (
-    <section>
+    <section className={style.contactStyle}>
       <h2>Kontakt os</h2>
       <form action="">
         <label htmlFor="">Dit navn</label>

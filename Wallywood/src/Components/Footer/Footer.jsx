@@ -1,6 +1,5 @@
 import style from './Footer.module.scss'
-// import { SocialMedia } from '../../Assets/Svgs/FaceBook'
-// import Twitter from '../../Assets/Svgs/Twitter'
+
 
 
 export const Footer = () => {
