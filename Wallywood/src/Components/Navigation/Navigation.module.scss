@@ -2,21 +2,22 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    // margin: 50px;
     border-bottom: #D97852 solid 2px;
 
     div {
-        padding: 50px;
+        display: flex;
+        align-items: flex-end;
     }
 
     a {
         padding: 10px;
-        color:#524641;
+        color: #524641;
         font-size: 18px;
         font-family: Titillium Web;
+        padding: 0 20px 0 20px;
     }
 
-    a:hover{
+    a:hover {
         color: #D97852
     }
 }
@@ -24,7 +25,8 @@
 .logo {
     color: #D97852;
     font-size: 54px;
-    margin-left: 30px;
     font-family: Titillium Web;
     font-weight: 900;
+    margin:0;
+
 }

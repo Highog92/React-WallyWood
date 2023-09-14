@@ -15,12 +15,14 @@
     aside {
         display: flex;
         flex-direction: row;
+        
     }
     
     svg{
         width: 40px;
         color: #CCCCCC;
         margin: 10px;
+        align-items: top;
     }
 
     svg:hover{

@@ -13,7 +13,8 @@ export function Contact() {
         <label htmlFor="email">Email</label>
         <input type="email" />
 
-        <textarea name="comment" id="" cols="30" rows="10"></textarea>
+        <label htmlFor="">Din Besked</label>
+        <textarea name="comment" id="" cols="50" rows="10"></textarea>
         <button>Send</button>
       </form>
     </section>
