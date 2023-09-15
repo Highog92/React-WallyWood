@@ -7,7 +7,7 @@ export function Home() {
     <section>
       <img src={Curtains} alt="" />
       <h2>Sidste nyt...</h2>
-      <MovieCard />
+        <MovieCard />
     </section>
   )
 }

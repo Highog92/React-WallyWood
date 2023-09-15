@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;900&display=swap');
+
 :root {
   font-family: Titillium Web, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -37,6 +38,14 @@ h1 {
 h2 {
   align-items: start;
   color: #D97852;
+}
+
+h3{
+  
+}
+
+h3, p{
+  color: #524641;
 }
 
 button {

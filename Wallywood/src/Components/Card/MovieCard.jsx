@@ -25,17 +25,20 @@ export function MovieCard() {
             <section key={movie.id} className={movieCardStyle.movieCard}>
               <hgroup>
 
-                <div>
-                  <img src={movie.image} />
-                </div>
-
                 <article>
-                  <h3>{movie.name}</h3>
-                  <p>{movie.description}</p>
-                  <p>{movie.genres.map((genre) => {
-                    return (<p key={genre.id}>{genre.title}</p>)
-                  })}</p>
-                  <button>Læs mere</button>
+                  <div>
+                    <img src={movie.image} />
+                  </div>
+                  <div>
+
+                    <h3>{movie.name}</h3>
+                    <p>{movie.description}</p>
+                    <p>{movie.genres.map((genre) => {
+                      return (<p key={genre.id}>{genre.title}</p>)
+                    })}</p>
+                    
+                    <button>Læs mere</button>
+                  </div>
                 </article>
               </hgroup>
             </section>
