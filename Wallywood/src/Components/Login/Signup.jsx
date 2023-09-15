@@ -2,7 +2,7 @@
 import { useForm } from 'react-hook-form'
 
 
-export function Login() {
+export function Signup() {
 
   const { register, handleSubmit, formState: { errors } } = useForm()
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import movieCardStyle from './MovieCard.module.scss'
+import movieCardStyle from '../HomeCards/MovieCard.module.scss'
 
 export function MovieCard() {
 
@@ -8,7 +8,7 @@ export function MovieCard() {
 
     const fetchMovie = () => {
 
-      const url = 'http://localhost:4000/poster/list'
+      const url = 'http://localhost:4000/poster/list?limit=2'
       fetch(url).then(result => result.json()).then(data => setMovieData(data))
     }
     fetchMovie()
@@ -18,12 +18,11 @@ export function MovieCard() {
 
   return (
 
-    <>
+    <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'50px'}}>
       {
         movieData && movieData.map((movie) => {
           return (
             <section key={movie.id} className={movieCardStyle.movieCard}>
-              <hgroup>
 
                 <article>
                   <div>
@@ -40,13 +39,12 @@ export function MovieCard() {
                     <button>Læs mere</button>
                   </div>
                 </article>
-              </hgroup>
             </section>
           )
 
         })
       }
-    </>
+    </div>
   )
 
 }

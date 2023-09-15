@@ -1,4 +1,4 @@
-import { MovieCard } from "../Components/Card/MovieCard"
+import { MovieCard } from "../Components/Card/HomeCards/MovieCard"
 import Curtains from '../Assets/Curtains.jpg'
 export function Home() {
 
