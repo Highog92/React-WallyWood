@@ -9,8 +9,7 @@ export function Signup() {
   const { register, handleSubmit, formState: { errors } } = useForm()
 
   const onSubmit = (data) => {
-    console.log(data);
-
+    
     const url = 'http://localhost:4000/users'
     const body = new URLSearchParams()
     body.append('firstname', data.firstname)
