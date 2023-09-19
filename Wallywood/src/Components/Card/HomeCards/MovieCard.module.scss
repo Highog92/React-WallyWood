@@ -1,13 +1,15 @@
 .movieCard {
-
     img {
         width: 100%;
+        min-width: 30%;
     }
 
     article {
+        
+        gap: 20px;
         display: flex;
         flex-direction: row;
     }
-    
+
 
 }

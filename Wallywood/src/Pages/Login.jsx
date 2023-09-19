@@ -1,12 +1,15 @@
 // import style from '../Layout/MainLayout.module.scss'
 import { useForm } from 'react-hook-form'
 import { Signup } from '../Components/Login/Signup';
-import { useState } from 'react';
-
+import { useContext, useState } from 'react';
+import { LoginContext } from '../Components/LoginContext/LoginContext';
+import style from '../Layout/MainLayout.module.scss'
 
 export function Login() {
 
   const { register, handleSubmit, formState: { errors } } = useForm()
+
+  const { setUser } = useContext(LoginContext)
 
   const onSubmit = (data) => {
 
@@ -20,7 +23,7 @@ export function Login() {
       body: body
     }
 
-    fetch(url, options).then(res => res.json()).then(data => console.log(data));
+    fetch(url, options).then(res => res.json()).then(data => setUser(data));
 
   }
 
@@ -28,7 +31,7 @@ export function Login() {
 
   if (isLoginTrue)
     return (
-      <section>
+      <section className={style.contactStyle}>
         <h2>Login</h2>
         <form onSubmit={handleSubmit(onSubmit)} action="">
           <label htmlFor="">Brugernavn
@@ -44,13 +47,13 @@ export function Login() {
           <input type="submit" value="submit" />
         </form>
 
-        <button onClick={() => setIsLoginTrue(false)}>Eller opret ny bruger</button>
+        <button onClick={() => setIsLoginTrue(false)} >Eller opret ny bruger</button>
       </section>
     )
 
   else
     return (
-      <section  >
+      <section className={style.contactStyle} >
 
         <Signup />
         <button onClick={() => setIsLoginTrue(true)}>Har du allerede en bruger? Login her</button>
@@ -58,4 +61,3 @@ export function Login() {
       </section>
     )
 }
-// className={style.contactStyle}
