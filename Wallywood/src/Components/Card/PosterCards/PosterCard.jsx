@@ -1,31 +1,35 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import movieCardStyle from '../PosterCards/PosterCard.module.scss';
 
 export function PosterCard() {
+  
+  const [posterData, setPosterData] = useState()
+
+  const [url, setUrl] = useState('http://localhost:4000/poster/list?limit=21')
 
   useEffect(() => {
     const fetchMovie = () => {
-      const url = 'http://localhost:4000/poster/list?limit=9';
       fetch(url)
         .then(result => result.json())
-        .then(data => setMovieData(data));
+        .then(data => setPosterData(data));
     }
     fetchMovie();
-  }, []);
-// -------------------------------↓ Dette stykke gør at Plakater giver fejl ↓ -----------------------------------------------------------
+  }, [url]);
+
+
   const setSort = (sort) => {
     switch (sort) {
-        case 'low':
-            setFetchUrl('http://localhost:4000/poster/list?sort_key=price&sort_direction=asc')
-            break;
-        case 'high':
-            setFetchUrl('http://localhost:4000/poster/list?sort_key=price&sort_direction=desc')
-            break;
-        case 'title':
-            setFetchUrl('http://localhost:4000/genre?sort_key=title')
-            break;
+      case 'low':
+        setUrl('http://localhost:4000/poster/list?sort_key=price&sort_direction=asc&limit=21')
+        break;
+      case 'high':
+        setUrl('http://localhost:4000/poster/list?sort_key=price&sort_direction=desc&limit=21')
+        break;
+      case 'title':
+        setUrl('http://localhost:4000/poster/list?sort_key=name&limit=21')
+        break;
     }
-}
+  }
 
   return (
     <div>
@@ -37,9 +41,7 @@ export function PosterCard() {
       </select>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '50px' }}>
-        {setSort(["title"]).map((movie) => (
-
-// ------------------------------- ↑ Dette stykke gør at Plakater giver fejl ↑ -----------------------------------------------------------
+        {posterData?.map((movie) => (
 
           <section key={movie.id} className={movieCardStyle.movieCard}>
             <article>
