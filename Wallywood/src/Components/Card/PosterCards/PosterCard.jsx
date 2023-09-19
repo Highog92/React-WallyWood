@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import movieCardStyle from '../PosterCards/PosterCard.module.scss';
 
 export function PosterCard() {
-  const [movieData, setMovieData] = useState([]);
-  const [selectedGenre, setSelectedGenre] = useState("All"); // Initialize with "All" to show all genres.
 
   useEffect(() => {
     const fetchMovie = () => {
@@ -14,41 +12,35 @@ export function PosterCard() {
     }
     fetchMovie();
   }, []);
-
-  // Function to filter movies based on selected genre
-  const filterMoviesByGenre = () => {
-    if (selectedGenre === "All") {
-      return movieData;
-    } else {
-      return movieData.filter(movie => movie.genres.some(genre => genre.title === selectedGenre));
+// -------------------------------↓ Dette stykke gør at Plakater giver fejl ↓ -----------------------------------------------------------
+  const setSort = (sort) => {
+    switch (sort) {
+        case 'low':
+            setFetchUrl('http://localhost:4000/poster/list?sort_key=price&sort_direction=asc')
+            break;
+        case 'high':
+            setFetchUrl('http://localhost:4000/poster/list?sort_key=price&sort_direction=desc')
+            break;
+        case 'title':
+            setFetchUrl('http://localhost:4000/genre?sort_key=title')
+            break;
     }
-  }
-
-  // Event handler for genre selection
-  const handleGenreChange = (event) => {
-    setSelectedGenre(event.target.value);
-  }
+}
 
   return (
     <div>
-      <select value={selectedGenre} onChange={handleGenreChange}>
-        <option value="All">All Genres</option>
-        <option value="All">Action</option>
-        <option value="All">Adventure</option>
-        <option value="All">Dokumentar</option>
-        <option value="All">Drama</option>
-        <option value="All">Gyser</option>
-        <option value="All">Karatefilm</option>
-        <option value="All">Komedie</option>
-        <option value="All">Krigsfilm</option>
-        <option value="All">Krimi</option>
-        <option value="All">Science Fiction</option>
-        <option value="All">Børnfilm</option>
-
+      <select onChange={(e) => setSort(e.target.value)}>
+        <option value="" disabled selected hidden>Sortér</option>
+        <option value="low">Pris - stigende</option>
+        <option value="high">Pris - faldene</option>
+        <option value="title">Titel</option>
       </select>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '50px' }}>
-        {filterMoviesByGenre().map((movie) => (
+        {setSort(["title"]).map((movie) => (
+
+// ------------------------------- ↑ Dette stykke gør at Plakater giver fejl ↑ -----------------------------------------------------------
+
           <section key={movie.id} className={movieCardStyle.movieCard}>
             <article>
               <div>
@@ -63,6 +55,6 @@ export function PosterCard() {
           </section>
         ))}
       </div>
-    </div>
+    </div >
   );
 }
